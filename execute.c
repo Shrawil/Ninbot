@@ -1,22 +1,8 @@
 #include "commands.h"
+#include "nbsupport.h"
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-
-void separate(char str[], char args[]) {
-	int i, j;
-	for(i = 0; str[i] != '\0'; i++) {
-		if(str[i] == ' ') {
-			str[i] = '\0';
-			break;
-		}
-	}
-	i++;
-	for(j = 0; str[i] != '\0'; i++) {
-		args[j++] = str[i];
-	}
-	args[j] = '\0';
-} 
 	
 
 int execute(char str[], char args[]) {
