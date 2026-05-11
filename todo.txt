@@ -1,0 +1,5 @@
+Remove tasks in todo by number.
+Better argument handling.
+Improve UI.
+Improve command handling.
+Auto launch when OS boots.

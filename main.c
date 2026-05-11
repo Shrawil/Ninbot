@@ -28,17 +28,7 @@ int main() {
 		str[strcspn(str, "\n")] = '\0';
 
 		// Parsing commands
-		for(i = 0; str[i] != '\0'; i++) {
-			if(str[i] == ' ') {
-				str[i] = '\0';
-				break;
-			}
-		}
-		i++;
-		for(j = 0; str[i] != '\0'; i++) {
-			args[j++] = str[i];
-		}
-		args[j] = '\0';
+		separate(str, args);
 
 		// Executing
 		int ran = execute(str, args);
