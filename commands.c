@@ -102,6 +102,23 @@ void youtube(char args[]) {
 	system(cmd);
 }
 
+int openApp(char args[]) {
+    if(args[0] == '\0') {
+        printf("No app provided.\n");
+        return 0;
+    }
+
+    char cmd[200];
+
+    snprintf(cmd,
+             sizeof(cmd),
+             "%s > /dev/null 2>&1 &",
+             args);
+
+    system(cmd);
+    return 1;
+}
+
 void showTime() {
 	time_t currentTime;
 	time(&currentTime);

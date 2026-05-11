@@ -1,16 +1,15 @@
 # Ninbot
 
-Ninbot is a small terminal-based assistant written in C for Linux systems.  
-The project is focused on learning low-level programming concepts, command parsing, modular project structure, and basic system automation.
+Ninbot is a small terminal-based assistant written in C for Linux systems.
 
-Currently, Ninbot can:
-- Open YouTube or search terms in the browser
-- Display current system time and date
-- Execute simple terminal commands
-- Parse user input into commands and arguments
-- Respond with simple assistant-style interactions
+The project is focused on learning:
+- low-level programming
+- command parsing
+- file handling
+- modular software structure
+- Linux system interaction
 
-This project is still in early development.
+Rather than relying heavily on built-in abstractions, Ninbot intentionally implements many systems manually to better understand how software works internally.
 
 ---
 
@@ -22,31 +21,77 @@ This project is still in early development.
 - Random startup greetings
 - Command parsing system
 - YouTube search integration
-- Current time/date display
-- Modular source structure (`main.c`, `commands.c`, `execute.c`)
+- Current time and date display
+- Persistent user setup system
+- Todo management system
+- Modular source structure
 - Linux browser launching using `xdg-open`
+
+---
+
+# First Time Setup
+
+When Ninbot runs for the first time, it checks for a user data file.
+
+If no data exists:
+- Ninbot asks for your name
+- creates a persistent data file
+- stores user information locally
+
+On future launches, Ninbot automatically loads the saved data and uses it during runtime.
 
 ---
 
 # Commands
 
-|-------------------------------------------------------------------------------------|
-| Command | Description 															  |
-|-------------------------------------------------------------------------------------|
-| `youtube` | Opens YouTube homepage 												  |
-| `youtube <search>` | Searches YouTube for a term 									  |
-| `time` | Displays current time and date 											  |
-| `help` | Shows available commands 												  |
-| `meow` | Secret command 															  |
-| `todo <mode> <args>` 																  | 
-|---Available mode--------------------------------------------------------------------|
-| ` add ` -> Adds a task to your todo list. 										  |
-| ` remove [number/all] ` -> Removes the todo at given number.  				 	  |
-| ` show <number> ` -> Shows all tasks in todo list (Providing a number is optional). |
-|-------------------------------------------------------------------------------------|
-| `exit` | Exits Ninbot 														      |
-|-------------------------------------------------------------------------------------|
+| Command | Description |
+|---|---|
+| `youtube` | Opens YouTube homepage |
+| `youtube <search>` | Searches YouTube |
+| `time` | Displays current time and date |
+| `todo add <task>` | Adds a todo item |
+| `todo show` | Displays all todo items |
+| `todo remove <number>` | Removes a todo item |
+| `help` | Shows available commands |
+| `meow` | Secret command |
+| `exit` | Exits Ninbot |
 
+---
+
+# Todo System
+
+Todos are stored persistently inside:
+
+```text
+todo.txt
+```
+
+Example:
+
+```text
+Buy groceries
+Finish assignment
+Practice C
+```
+
+---
+
+# User Data System
+
+User information is stored locally using simple file-based persistence.
+
+Example structure:
+
+```text
+name=Ninjazz
+```
+
+This system will later be expanded for:
+- preferences
+- aliases
+- app launchers
+- saved settings
+- assistant memory
 
 ---
 
@@ -54,13 +99,17 @@ This project is still in early development.
 
 ```text
 Ninbot/
+├── data/
+│   ├── data.txt
+│   ├── todo.txt
+│   └── logs.txt
+│
 ├── main.c
 ├── commands.c
 ├── commands.h
 ├── execute.c
 ├── execute.h
-├── README.md
-└── todo.txt
+└── README.md
 ```
 
 ---
@@ -94,24 +143,22 @@ The project uses:
 xdg-open
 ```
 
-to launch browser-related commands.
+for browser-related features.
 
 ---
 
-# Future Plans
+# Planned Features
 
-Planned features include:
-
-- App launcher system
+- App launcher aliases
+- Command history/log system
 - File searching
-- Persistent memory/config system
-- Custom aliases
-- User-defined commands
-- Better command parsing
+- Notes system
+- User-defined aliases
+- Better parser architecture
 - Colored terminal UI
+- Plugin-like command system
 - Voice interaction experiments
 - Background startup mode
-- Plugin-style command architecture
 
 ---
 
@@ -120,20 +167,21 @@ Planned features include:
 This project is mainly being built to practice:
 
 - C programming
-- String parsing
-- File handling
-- Linux system interaction
-- Modular code organization
-- Process execution
-- Terminal application design
+- String manipulation
+- File I/O
+- Linux process interaction
+- Persistent storage systems
+- Modular application design
+- Command interpreters
+- Terminal application architecture
 
 ---
 
 # Notes
 
-This project intentionally avoids relying heavily on built-in abstractions in order to better understand lower-level behavior and implementation details.
+Ninbot is still in early development.
 
-Some parts are experimental and may change frequently.
+Many systems are intentionally written manually for learning purposes rather than using higher-level libraries or abstractions.
 
 ---
 
