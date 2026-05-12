@@ -109,6 +109,48 @@ Ninbot/
 └── README.md
 ```
 
+Source File Architecture
+
+Ninbot is divided into multiple source and header files to keep functionality modular and easier to maintain.
+
+Core Files
+
+File| Purpose
+"main.c"| Main runtime loop, input handling, greetings, and command flow
+"execute.c"| Command execution and command routing logic
+"commands.c"| Implementation of assistant features and commands
+"nbsupport.c"| Utility/helper systems such as initialization and persistent setup
+
+---
+
+Header Files
+
+Header files are used to declare functions shared across different source files.
+
+Header File| Purpose
+"commands.h"| Function declarations for assistant commands
+"execute.h"| Declaration for command execution system
+"nbsupport.h"| Helper functions, setup utilities, and support systems
+
+---
+
+Why Use Header Files?
+
+Using header files helped separate:
+
+- declarations
+- implementations
+- runtime logic
+
+This made the project:
+
+- cleaner
+- easier to scale
+- easier to debug
+- more modular
+
+It also helped in understanding how larger C projects are structured internally.
+
 ---
 
 # Compilation
@@ -116,7 +158,7 @@ Ninbot/
 Compile using GCC:
 
 ```bash
-gcc main.c execute.c commands.c -o ninbot
+gcc main.c execute.c commands.c nbsupport.h -o ninbot
 ```
 
 Run:
