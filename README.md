@@ -109,11 +109,11 @@ Ninbot/
 └── README.md
 ```
 
-Source File Architecture
+## Source File Architecture
 
 Ninbot is divided into multiple source and header files to keep functionality modular and easier to maintain.
 
-Core Files
+### Core Files
 
 | File | Purpose |
 |---|---|
@@ -124,7 +124,7 @@ Core Files
 
 ---
 
-Why Use Header Files?
+### Why Use Header Files?  
 
 Using header files helped separate:
 
@@ -132,7 +132,7 @@ Using header files helped separate:
 - implementations
 - runtime logic
 
-This made the project:
+### This made the project:
 
 - cleaner
 - easier to scale
