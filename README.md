@@ -117,21 +117,10 @@ Core Files
 
 | File | Purpose |
 |---|---|
-| "ninbot.c" | Main runtime loop, input handling, greetings, and command flow. |
-| "execute.c" | Command execution and command routing logic. |
-| "commands.c" | Implementation of assistant features and commands. |
-| "nbsupport.c" | Utility/helper systems such as initialization and persistent setup. |
-
----
-
-Header Files
-
-Header files are used to declare functions shared across different source files.
-
-Header File| Purpose
-"commands.h"| Function declarations for assistant commands
-"execute.h"| Declaration for command execution system
-"nbsupport.h"| Helper functions, setup utilities, and support systems
+| ` ninbot.c ` | Main runtime loop, input handling, greetings, and command flow. |
+| ` execute.c ` | Command execution and command routing logic. |
+| ` commands.c ` | Implementation of assistant features and commands. |
+| ` nbsupport.c ` | Utility/helper systems such as initialization and persistent setup. |
 
 ---
 
