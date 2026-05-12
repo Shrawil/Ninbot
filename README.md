@@ -116,10 +116,11 @@ Ninbot is divided into multiple source and header files to keep functionality mo
 Core Files
 
 | File | Purpose |
+|---|---|
 | "ninbot.c" | Main runtime loop, input handling, greetings, and command flow. |
-| "execute.c"| Command execution and command routing logic|
-|"commands.c"| Implementation of assistant features and commands|
-|"nbsupport.c"| Utility/helper systems such as initialization and persistent setup|
+| "execute.c" | Command execution and command routing logic. |
+| "commands.c" | Implementation of assistant features and commands. |
+| "nbsupport.c" | Utility/helper systems such as initialization and persistent setup. |
 
 ---
 
