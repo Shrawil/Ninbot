@@ -99,11 +99,8 @@ This system will later be expanded for:
 
 ```text
 Ninbot/
-├── data/
-│   ├── data.txt
-│   ├── todo.txt
-│   └── logs.txt
-│
+├── data.txt
+├── todo.txt
 ├── main.c
 ├── commands.c
 ├── commands.h
